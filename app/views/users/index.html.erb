@@ -1,1 +1,13 @@
-<h1>Here is a list of posts for a given user</h1>
+<section class='user-section'>
+  <ul class='user-container'>
+<% @users.each do |user| %>
+    <li class='user-index-card'>
+      <img class='profile-index-photo' src='<%= user.photo %>' alt="<%= user.name %>'s profile picture" />
+      <div class='user-index-container'>
+        <h2><%= link_to user.name, user_path(user) %></h2>
+        <p>Number of Posts: <%= user.posts_counter %></p>
+      </div>
+    </li>
+<% end %>
+  </ul>
+</section>
